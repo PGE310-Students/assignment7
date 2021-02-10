@@ -84,27 +84,10 @@ class TestSolution(unittest.TestCase):
         self.assertAlmostEqual(self.hw.depth, 5000, places=4)
         self.assertAlmostEqual(self.hw.length, 15000, places=4)
         
-    def test_attributes_private(self):
-        
-        vw = VerticalWell(depth = 4000)
-        hw = HorizontalWell(depth = 4000, length = 14000)
-        
-        self.assertAlmostEqual(vw.depth, 4000, places=4)
-        self.assertAlmostEqual(hw.depth, 4000, places=4)
-        self.assertAlmostEqual(hw.length, 14000, places=4)
-        
     def test_wellbore_volume(self):
         
         self.assertAlmostEqual(self.vw.compute_wellbore_volume(diameter = 0.5), 981.7477042468104, places=6)
         self.assertAlmostEqual(self.hw.compute_wellbore_volume(diameter = 0.5), 3926.9908169872415, places=6)
-        
-    def test_wellbore_volume_private(self):
-        
-        vw = VerticalWell(depth = 4000)
-        hw = HorizontalWell(depth = 4000, length = 14000)
-        
-        self.assertAlmostEqual(vw.compute_wellbore_volume(diameter = 0.5), 785.3981633974482, places=6)
-        self.assertAlmostEqual(hw.compute_wellbore_volume(diameter = 0.5), 3534.2917352885174, places=6)
 
 
 if __name__ == "__main__":
